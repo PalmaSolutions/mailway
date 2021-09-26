@@ -19,7 +19,7 @@ try:
         logging.error("tempfile %s" % ftmp.name)
         raise Exception("spamc terminated with non zero")
 
-    os.replace(ftmp.name, emailfile)
+    shutil.move(ftmp.name, emailfile)
     exit(0)
 except Exception as e:
     raise e
